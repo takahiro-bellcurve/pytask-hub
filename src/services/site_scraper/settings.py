@@ -87,7 +87,7 @@ LOG_FORMATTER = 'lib.scrapy_script.logging_formatter.LoggingFormatter'
 APP_ENV = os.getenv('APP_ENV')
 
 FEEDS = {
-    '%(name)s.csv': {
+    'tmp/%(name)s.csv': {
         'format': 'csv',
         'encoding': 'utf8',
     }
