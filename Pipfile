@@ -8,6 +8,7 @@ scrapy = "*"
 requests = "*"
 pandas = "*"
 lxml = "*"
+prefect = "*"
 
 [dev-packages]
 
