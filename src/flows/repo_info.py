@@ -19,5 +19,5 @@ if __name__ == "__main__":
     ).deploy(
         name="my-first-deployment",
         work_pool_name="pytask-hub",
-        cron="10 * * * *",
+        cron="45 * * * *",
     )
