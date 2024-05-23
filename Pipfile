@@ -9,7 +9,7 @@ requests = "*"
 pandas = "*"
 lxml = "*"
 prefect = "*"
-autopep8 = "*"
+ruff = "*"
 
 [dev-packages]
 
