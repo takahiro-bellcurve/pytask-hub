@@ -1,4 +1,4 @@
-# Scrapy settings for site_scraper project
+# Scrapy settings for scrapy project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,10 +8,10 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import os
 
-BOT_NAME = "site_scraper"
+BOT_NAME = "scrapy"
 
-SPIDER_MODULES = ["src.services.site_scraper.spiders"]
-NEWSPIDER_MODULE = "src.services.site_scraper.spiders"
+SPIDER_MODULES = ["src.services.scrapy.spiders"]
+NEWSPIDER_MODULE = "src.services.scrapy.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -46,13 +46,13 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    "site_scraper.middlewares.SiteScraperSpiderMiddleware": 543,
+#    "scrapy.middlewares.SiteScraperSpiderMiddleware": 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    "site_scraper.middlewares.SiteScraperDownloaderMiddleware": 543,
+#    "scrapy.middlewares.SiteScraperDownloaderMiddleware": 543,
 # }
 
 # Enable or disable extensions
@@ -64,7 +64,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    "site_scraper.pipelines.SiteScraperPipeline": 300,
+#    "scrapy.pipelines.SiteScraperPipeline": 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
