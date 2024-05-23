@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  prefect-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./:/app
+    tty: true
+    restart: always
+    environment:
+      - PREFECT_UI_URL=http://127.0.0.1:4200/api
+      - PREFECT_API_URL=http://127.0.0.1:4200/api
+      - PREFECT_SERVER_API_HOST=0.0.0.0
+      - PREFECT_API_DATABASE_CONNECTION_URL=postgresql+asyncpg://postgres:postgres@database:5432/prefect
+    command: ["prefect", "server", "start"]
+  prefect-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    depends_on:
+      - prefect-server
+    tty: true
+    restart: always
+    environment:
+      - .env
+    command: ["prefect", "worker", "start", "--pool", "pytask-hub"]
+  database:
+    image: postgres:15.2-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=prefect
+    expose:
+      - 5432
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  prefect:
+  db:
