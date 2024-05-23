@@ -1,0 +1,25 @@
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+exclude = [
+  "docker-compose.yml",
+  "Dockerfile",
+  "requirements.txt",
+  "Makefile",
+  ".venv",
+  "tmp",
+  "terraform",
+  "db"
+]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle error
+  "F",   # Pyflakes
+  "W",   # pycodestyle Warning
+  "I",   # Isort
+  "B",   # flake8-bugbear
+  "PL",   # Pylint
+]
+
+ignore = ["E501", "PLW0603", "F811", "B904", "PLR2004", "F401", "E712", "B023", "PLR0911", "PLR0913", "PLR0915"]
