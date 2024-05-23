@@ -12,9 +12,6 @@ def get_repo_info():
     print(f"Stars 🌠 : {repo['stargazers_count']}")
     print(f"Forks 🍴 : {repo['forks_count']}")
 
-get_repo_info.deploy(name="my-first-deployment",
-        work_pool_name="test", )
-
 if __name__ == "__main__":
     get_repo_info.from_source(
         source="https://github.com/takahiro-bellcurve/pytask-hub.git",
