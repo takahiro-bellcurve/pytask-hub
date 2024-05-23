@@ -1,8 +1,8 @@
 import requests
 from lxml import html
+
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import Rule
-
 from src.services.scrapy.custom_spider import CustomCrawlSpider
 
 

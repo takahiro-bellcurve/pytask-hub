@@ -1,5 +1,6 @@
-from scrapy import logformatter
 import logging
+
+from scrapy import logformatter
 
 
 class LoggingFormatter(logformatter.LogFormatter):
