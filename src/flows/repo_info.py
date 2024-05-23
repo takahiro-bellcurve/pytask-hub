@@ -15,8 +15,9 @@ def get_repo_info():
 if __name__ == "__main__":
     get_repo_info.from_source(
         source="https://github.com/takahiro-bellcurve/pytask-hub.git",
-        entrypoint="src.flows.repo_info.py:get_repo_info"
+        entrypoint="src/flows/repo_info.py:get_repo_info"
     ).deploy(
         name="my-first-deployment",
-        work_pool_name="test",
+        work_pool_name="pytask-hub",
+        cron="0 10 * * *",
     )
