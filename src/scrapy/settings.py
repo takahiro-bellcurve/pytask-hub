@@ -10,8 +10,8 @@ import os
 
 BOT_NAME = "scrapy"
 
-SPIDER_MODULES = ["src.services.scrapy.spiders"]
-NEWSPIDER_MODULE = "src.services.scrapy.spiders"
+SPIDER_MODULES = ["src.scrapy.spiders"]
+NEWSPIDER_MODULE = "src.scrapy.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -81,7 +81,7 @@ DEFAULT_REQUEST_HEADERS = {
 # AUTOTHROTTLE_DEBUG = False
 
 LOG_LEVEL = 'INFO'
-LOG_FORMATTER = 'lib.scrapy_script.logging_formatter.LoggingFormatter'
+LOG_FORMATTER = 'src.scrapy.logging_formatter.LoggingFormatter'
 
 # FEED_SETTINGS
 APP_ENV = os.getenv('APP_ENV')
